@@ -11,8 +11,8 @@
         </div>
         <div class="user-form__field">
             <label for="country" class="user-form__label">country: </label>
-            <app-autocomplete-input [suggestions]="countrySuggestions" (input)="onCountryInput($event!.target!.value)"
-                name="country" id="country" class="user-form__input" [(ngModel)]="user.country">
+            <app-autocomplete-input [suggestions]="countrySuggestions" (input)="onCountryInput($event)" name="country"
+                id="country" class="user-form__input" [(ngModel)]="user.country">
             </app-autocomplete-input>
         </div>
         <div class="user-form__field">

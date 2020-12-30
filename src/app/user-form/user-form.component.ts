@@ -27,9 +27,12 @@ export class UserFormComponent implements OnInit, OnDestroy {
     this.subscriptions.push(sub);
   }
 
-  onCountryInput(query: string) {
-    this.countryQuerySubject.next(query);
-    this.countrySuggestions = [];
+  onCountryInput(event: Event) {
+    const input = event.target;
+    if (input instanceof HTMLInputElement) {
+      this.countryQuerySubject.next(input.value);
+      this.countrySuggestions = [];
+    }
   }
 
   onSubmit(user: User) {
