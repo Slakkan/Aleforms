@@ -1,0 +1,27 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit(userForm.form.value)" autocomplete="off" #userForm="ngForm" class="user-form">
+        <h3 class="user-form__title">Register</h3>
+        <div class="user-form__field">
+            <label class="user-form__label" for="name">name: </label>
+            <input class="user-form__input" name="name" id="name" [(ngModel)]="user.name">
+        </div>
+        <div class="user-form__field">
+            <label class="user-form__label" for="age">age: </label>
+            <input class="user-form__input" name="age" [(ngModel)]="user.age">
+        </div>
+        <div class="user-form__field">
+            <label for="country" class="user-form__label">country: </label>
+            <app-autocomplete-input [suggestions]="countrySuggestions" (input)="onCountryInput($event!.target!.value)"
+                name="country" id="country" class="user-form__input" [(ngModel)]="user.country">
+            </app-autocomplete-input>
+        </div>
+        <div class="user-form__field">
+            <label class="user-form__label" for="city">city: </label>
+            <input class="user-form__input" name="city" [(ngModel)]="user.city">
+        </div>
+        <div class="user-form__submit">
+            <button class="user-form__button user-form__button--cancel">Cancel</button>
+            <button class="user-form__button" type="submit">Submit</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+.user-form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border-radius: 12px;
+    border: 1px solid black;
+    padding: 24px;
+    background: rgb(180, 176, 176);
+    box-shadow: 12px 12px 8px rgb(61, 61, 61);
+    &__title{
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 16px;
+    }
+    &__field {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    &__submit{
+        display: flex;
+        justify-content: space-around;
+        padding-top: 16px;
+    }
+    &__button{
+        width: 120px;
+        border-radius: 8px;
+        background: rgb(42, 35, 71);
+        outline: none;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        padding: 4px 0;
+        &--cancel{
+            background: rgb(206, 206, 206);
+            color:black;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+<div class="container">
+    <input class="autocomplete-input" [ngModel]="value" (ngModelChange)="onChange($event)"
+        [ngClass]="{'autocomplete-input--empty': !suggestions.length}" #autocomplete />
+    <div class="dropdown" [ngStyle]="{
+        'width': autocomplete.offsetWidth + 'px',
+        'margin-top': autocomplete.offsetHeight + 'px'
+    }">
+        <div *ngIf="suggestions.length" class="dropdown__shadow" [ngStyle]="{
+            'padding-top': autocomplete.offsetHeight + 'px',
+            'top': -autocomplete.offsetHeight + 'px'
+        }"></div>
+        <span class="dropdown__option" *ngFor="let suggestion of suggestions" (click)="onSuggestionClick($event)">
+            {{ suggestion }}
+        </span>
+    </div>
+</div>
